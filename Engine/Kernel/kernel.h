@@ -6,14 +6,13 @@
 class Kernel
 {
     public:
-
         void start();
 
     private:
-
         //Class Fields
         bool isRunning = true;
-        
+        SDL_Window* window = NULL;
+        SDL_Event* event = NULL;
         //Class Instances
         Graphics* graphicsManager;
 

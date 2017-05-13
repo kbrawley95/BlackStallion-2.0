@@ -1,11 +1,12 @@
+//Generate Window for OpenGl Processing
 SDL_Window* Kernel::createWindow(std::string windowName)
 {
     SDL_window* window = SDL_CreateWindow(
                         windowName, 
                         CENTEREDPOS, 
                         CENTEREDPOS, 
-                        Kernel::WIDTH, 
-                        Kernel::HEIGHT, 
+                        AppWindow::WIDTH, 
+                        AppWindow::HEIGHT, 
                         SDL_OPENGL_CONTEXT
     );
 
@@ -15,18 +16,18 @@ SDL_Window* Kernel::createWindow(std::string windowName)
 //Initialisation Method (Executed on Engine Start)
 void Kernel::start()
 {
-    SDL_Window* window = createWindow("Test Window");
-    SDL_Event* event;
-
-    //Generate OpenGL Context For Rendering Content To Window
-    SDL_Context context = SDL_GLContext(window);
-
     //Initialise SDL2
     initSDL();
 
+    //Create Application Window
+    window = createWindow("Test Window");
+
+    //Generate OpenGL Context For Rendering Content To Window
+    SDL_GLContext glContext = SDL_GL_CreateContext(window);
 
     //Initialise OpenGL 
     graphicsManager->initGL();
+    graphicsManager->setViewport(AppWindow::WIDTH, AppWindow::HEIGHT);
 
     //Main Game Loop
     while(isRunning)
@@ -34,8 +35,11 @@ void Kernel::start()
         eventHandling(event);
         update();
         render();
+
+        SDL_GL_SwapWindow(window);
     }
 
+    //Free up all allocated memory resources
     cleanUp();
 }
 

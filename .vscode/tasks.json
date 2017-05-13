@@ -10,8 +10,6 @@
         "tasks": [
             {
                 "taskName": "Build",
-                "suppressTaskName": true,
-                "isBuildCommand": true,
                 "args": [
                     "mkdir Build",
                     "& robocopy Dependencies C:/MinGW /E", 
