@@ -13,10 +13,14 @@ class Kernel
 
         //Class Fields
         bool isRunning = true;
-        float currentTime=0;
-        float lastTime = 0;
-        float deltaTime = 0;
+        
+        //Class Instances
+        Graphics* graphicsManager;
 
+        //Initialisation
+        void initSDL();
+
+        //Pipeline Methods
         SDL_Window* createWindow(std::string windowName);
         void eventHandling(SDL_Event* event);
         void update();
