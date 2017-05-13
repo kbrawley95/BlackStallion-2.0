@@ -1,0 +1,24 @@
+{
+    "version": "0.1.0",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "windows":{
+        "command": "cmd",
+        "args": ["/C"],
+        "suppressTaskName": true,
+        "isShellCommand": true,
+        "tasks": [
+            {
+                "taskName": "Build",
+                "suppressTaskName": true,
+                "isBuildCommand": true,
+                "args": [
+                    "mkdir Build",
+                    "& robocopy Dependencies C:/MinGW /E", 
+                    "& robocopy Dependencies/bin Build", 
+                    "& g++ -std=c++11 main.cpp -lopengl32 -lglew32 -lglew32mx -lglu32 -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_image -o Build/build"
+                ]
+            }
+        ]
+    }
+}
