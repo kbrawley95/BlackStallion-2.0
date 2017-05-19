@@ -12,6 +12,18 @@
             "cwd": "${workspaceRoot}",
             "environment": [],
             "externalConsole": true
+        },
+        {
+            "name": "Linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "Build",
+            "program": "${workspaceRoot}/build",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true
         }
     ]
 }
