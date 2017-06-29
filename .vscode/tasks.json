@@ -1,36 +1,29 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
     "version": "0.1.0",
+    "command": "g++",
     "isShellCommand": true,
-    "showOutput": "always",
-    "windows":{
-        "command": "cmd",
-        "args": ["/C"],
-        "suppressTaskName": true,
+    "linux": {
         "tasks": [
             {
                 "taskName": "Build",
-                "isBuildCommand": true,
+                "suppressTaskName": true,
                 "args": [
-                    "mkdir Build",
-                    "& robocopy Dependencies C:/MinGW /E", 
-                    "& robocopy Dependencies/bin Build", 
-                    "& g++ -std=c++11 main.cpp -lopengl32 -lglew32 -lglew32mx -lglu32 -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_image -o Build/build"
-                ]
-            }
-        ]
-    },
-    "linux": {  //Linux Task Configuration
-        "command": "sh",
-        "args": ["-c"],
-        "suppressTaskName": true,
-        "tasks": [
+                    "--std=c++11",
+                    "-g",
+                    "main.cpp",
+                    "-o","Builds/Linux_Build/blackstallion"
+                ],
+                "isBuildCommand":true
+            },
             {
-                "taskName": "Build",
-                "isBackground": true,
-                "args": [
-                    "mkdir linux_build",
-                    "& g++ -std=c++11 main.cpp -o build `sdl2-config --cflags --libs`"
-                ]
+               "taskName": "Clean",
+               "suppressTaskName": true,
+               "args":[
+                   "rm",
+                   "Builds/Linux_Build/blackstallion"
+               ]
             }
         ]
     }

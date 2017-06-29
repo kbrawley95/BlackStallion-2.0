@@ -1,8 +1,8 @@
-#include "Engine/Kernel/kernel.h"
+#include "Engine/common.h"
 
 int main()
 {
-    Kernel* engine;
-    engine->start();
+    std::cout<<"Hello World"<<std::endl;
+    std::cin.get();
     return 0; 
 }
