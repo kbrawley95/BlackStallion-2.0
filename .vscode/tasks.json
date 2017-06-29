@@ -4,6 +4,29 @@
     "version": "0.1.0",
     "command": "g++",
     "isShellCommand": true,
+    "windows": {
+        "tasks": [
+            {
+                "taskName": "Build",
+                "suppressTaskName": true,
+                "args": [
+                    "--std=c++11",
+                    "-g",
+                    "main.cpp",
+                    "-o","Builds/Win_Build/blackstallion"
+                ],
+                "isBuildCommand":true
+            },
+            {
+               "taskName": "Clean",
+               "suppressTaskName": true,
+               "args":[
+                   "rm",
+                   "Builds/Win_Build/blackstallion.exe"
+               ]
+            }
+        ]
+    },
     "linux": {
         "tasks": [
             {
