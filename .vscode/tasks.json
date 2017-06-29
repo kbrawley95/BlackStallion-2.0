@@ -46,6 +46,7 @@
                     "-g",
                     "main.cpp",
                     "-o","Builds/Linux_Build/blackstallion",
+                    "-lGL",
                     "-lSDL2",
                     "-lSDL2_ttf",
                     "-lSDL2_image",

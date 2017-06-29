@@ -4,14 +4,18 @@
 class Kernel
 {
     public:
+        
+
         int start();
-    private:
         static bool isRunning; 
 
+    private:
+       
         SDL_Window* createWindow(const char* window_title, int width, int height);
-        void update();
+        bool initSDL();
+        bool update(SDL_Event event);
         void render();
-        void cleanUp(SDL_Window* window);
+        void cleanUp(SDL_Window* window, SDL_GLContext &glContext);
 
 };
 

@@ -23,6 +23,7 @@ using namespace std;
 #include <SDL2/SDL_image.h>
 
 /*Class Definitions*/
+#include "Graphics/graphics.h"
 #include "Kernel/kernel.h"
 
 
