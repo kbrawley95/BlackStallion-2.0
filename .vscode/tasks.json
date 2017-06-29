@@ -14,10 +14,15 @@
                     "-g",
                     "main.cpp",
                     "-o","Builds/Win_Build/blackstallion",
+                    "-lopengl32",
+                    "-lmingw32",
+                    "-lglew32",
+                    "-lglew32mx",
+                    "-lglu32",
+                    "-lSDL2main",
                     "-lSDL2",
                     "-lSDL2_ttf",
-                    "-lSDL2_image",
-                    "-lGLEW"
+                    "-lSDL2_image"
                 ],
                 "isBuildCommand":true
             },
