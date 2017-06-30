@@ -4,13 +4,10 @@
 class Kernel
 {
     public:
-        
-
         int start();
         static bool isRunning; 
 
     private:
-       
         SDL_Window* createWindow(const char* window_title, int width, int height);
         bool initSDL();
         bool update(SDL_Event event);

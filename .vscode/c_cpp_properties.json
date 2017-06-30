@@ -25,6 +25,8 @@
                     "/usr/include/x86_64-linux-gnu/c++/5.4.0",
                     "/usr/local/include",
                     "/usr/include",
+                    "usr/include/SDL2",
+                    "usr/include/GL",
                     "/usr/include/x86_64-linux-gnu"
                 ]
             }

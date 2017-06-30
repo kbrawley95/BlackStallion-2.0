@@ -1,13 +1,3 @@
-Graphics::Graphics()
-{
-
-}
-
-Graphics::~Graphics()
-{
-
-}
-
 void Graphics::initOpenGL()
 {
     //Enable Backface Culling
@@ -24,7 +14,6 @@ void Graphics::initOpenGL()
 
     //Enable depth testing
     glEnable(GL_DEPTH_TEST);
-    
 
     //Specify the depth test to use
     glDepthFunc(GL_LEQUAL);
@@ -38,12 +27,15 @@ void Graphics::initOpenGL()
         /*Problem: glewInit failed, something is seriously wrong*/
         std::cout<<"Error: "<<glewGetErrorString(err)<<std::endl;
     }
+    else
+    {
+        SDL_Log("GLEW Intialised");
+        setViewport(640, 480);
+    }
 }
 
 void Graphics::setViewport(int width, int height)
 {
     //Setup viewport
     glViewport(0,0,(GLsizei)width, (GLsizei)height);
-
-    
 }

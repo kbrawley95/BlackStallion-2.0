@@ -13,6 +13,7 @@ int Kernel::start()
     Graphics* graphics_manager;
     graphics_manager->initOpenGL();
 
+
     //Check that the window was succesfully created
     if(window == NULL)
     {
@@ -20,6 +21,8 @@ int Kernel::start()
         printf("Could not create window: %s\n", SDL_GetError());
         return 1;
     }
+    else
+        SDL_Log("Window Successful Generated");
 
     //Variable Declaration
     SDL_Event event;
@@ -29,6 +32,8 @@ int Kernel::start()
     {
         update(event);
         render();
+
+        SDL_GL_SwapWindow(window);
     }
 
     //Free up memory resources

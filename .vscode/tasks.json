@@ -47,10 +47,16 @@
                     "main.cpp",
                     "-o","Builds/Linux_Build/blackstallion",
                     "-lGL",
+                    "-lGLEW",
+                    "-lGLU",
                     "-lSDL2",
+                    "-lSDL2main",
                     "-lSDL2_ttf",
                     "-lSDL2_image",
-                    "-lGLEW"
+                    "-lX11",
+                    "-lpthread",
+                    "-lXrandr",
+                    "-lXi"
                 ],
                 "isBuildCommand":true
             },
